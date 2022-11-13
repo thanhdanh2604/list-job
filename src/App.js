@@ -1,29 +1,27 @@
 import React from 'react'
-
-import Card from './Compoments/BasicCard.js';
 import AppBar from './Compoments/AppBar.js';
-
-
-
-import jobs from './Compoments/data/jobs.json';
-import { Grid } from '@mui/material';
-
+import Home from './pages/Home.js';
+import Details from './pages/Details.js';
+import { Route, Routes } from 'react-router';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
+const darkTheme = createTheme({ 
+  palette: {
+  mode: 'dark',
+},})
 function App() {
   return (
-    <div>
-      <AppBar />
-      <Grid sx={{mt:2,}} container spacing={3}>
-          {jobs.slice(5,8).map(job=>(
-            <Grid item xs={4}>
-              <Card title={job.title} salaryMax={job.salaryHigh} city={job.city} jobDes={job.description} skills={job.skills}/>
-            </Grid>
-          ))}
-  
-      </Grid>
-
-    </div>
+    <ThemeProvider theme={darkTheme}>
+      <CssBaseline />
+      <div >
+          <AppBar />
+          <Routes>
+              <Route path='/' element={<Home/>}/>
+              <Route path='/job/:id' element={<Details/>} />
+          </Routes>
+      </div>
+    </ThemeProvider>
   );
-
 }
 
 export default App
