@@ -9,9 +9,9 @@ import { useNavigate } from 'react-router';
 export default function BasicCard({titleJob,jobDes,skills,jobId}) {
   const navigate = useNavigate();
   return (
-    <Card sx={{ minWidth: 275, p:0.5, backgroundColor:'#5d5d5d' }}>
-      <CardContent>
-        <Typography variant="h5" component="div" sx={{color:'white'}}>
+    <Card sx={{ minWidth: 275, minHeight:300, p:0.5, backgroundColor:'#5d5d5d' }}>
+      <CardContent >
+        <Typography  variant="h5" component="div" sx={{color:'white',minHeight:80}}>
           {titleJob}
         </Typography>
         <hr></hr>

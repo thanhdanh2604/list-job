@@ -18,7 +18,7 @@ function Home() {
     <div>
       <Container>
         <pageContext.Provider value={{currentPage,handleNavPage}}>
-            <Grid sx={{mt:3,p:2}} container spacing={3} >
+            <Grid sx={{mt:1,p:2}} container spacing={2} >
               {jobs.slice(currentPage*5-5,currentPage*5).map(job=>(
                   <Grid item xs={12} sm={6} md={4}  >
                       <Card key={job.id} sx={{backgroundColor:'#5d5d5d'}} titleJob={job.title} salaryMax={job.salaryHigh} city={job.city} jobDes={job.description} jobId={job.id} skills={job.skills}/>
