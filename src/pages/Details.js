@@ -5,8 +5,7 @@ function Details() {
   return (
     <Container>
       <div>
-        Detail Page\
-        {id}
+        Detail Page
       </div>
     </Container>
    
