@@ -27,6 +27,8 @@ export default function ModalDetailJob({jobTitle,jobDes,skills}) {
   const handleOpenDetailJob = () => {
     if (isLogging) {
       setOpen(true);
+    }else{
+      alert('You must logging to see this infomation!')
     }
   };
 
