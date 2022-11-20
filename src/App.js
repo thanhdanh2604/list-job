@@ -1,7 +1,6 @@
 import React from 'react'
-import AppBar from './Compoments/AppBar.js';
+
 import Home from './pages/Home.js';
-import Details from './pages/Details.js';
 import { Route, Routes } from 'react-router';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -14,10 +13,9 @@ function App() {
     <ThemeProvider theme={darkTheme}>
       <CssBaseline />
       <div >
-          <AppBar />
           <Routes>
               <Route path='/' element={<Home/>}/>
-              <Route path='/job/:id' element={<Details/>} />
+              <Route path='/job/:id' />
           </Routes>
       </div>
     </ThemeProvider>

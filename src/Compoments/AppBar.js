@@ -7,7 +7,10 @@ import Typography from '@mui/material/Typography';
 import InputBase from '@mui/material/InputBase';
 import SearchIcon from '@mui/icons-material/Search';
 import { Container } from '@mui/system';
-
+import Button from '@mui/material/Button';
+import ModalLogin from '../Compoments/ModalLogin';
+import formSearch from './formSearch';
+import { pageContext } from '../pages/Home';
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
   borderRadius: theme.shape.borderRadius,
@@ -51,11 +54,16 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export default function SearchAppBar() {
+  const {isLogging,setlogging} = React.useContext(pageContext);
+  const {userName} = React.useContext(pageContext);
+  const handleSignOut = ()=>{
+    setlogging(false);
+  }
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static" sx={{backgroundColor:'#4a5060bd'}}>
         <Container>
-          <Toolbar>
+          <Toolbar sx="">
             <Typography
               variant="h6"
               noWrap
@@ -64,15 +72,8 @@ export default function SearchAppBar() {
             >
               Job Routing
             </Typography>
-            <Search>
-              <SearchIconWrapper>
-                <SearchIcon />
-              </SearchIconWrapper>
-              <StyledInputBase
-                placeholder="Search…"
-                inputProps={{ 'aria-label': 'search' }}
-              />
-            </Search>
+            
+            {isLogging===true? <><h4>Wellcome {userName} !</h4> <Button onClick={handleSignOut}>Sign Out</Button></>:<ModalLogin />}
           </Toolbar>
         </Container>
       </AppBar>
