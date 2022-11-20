@@ -4,7 +4,6 @@ import Card from '../Compoments/BasicCard.js';
 import { Grid } from '@mui/material';
 import Container from '@mui/material/Container';
 import PaginationSize from '../Compoments/Pagination.js';
-import formSearch from '../Compoments/formSearch';
 import AppBar from '../Compoments/AppBar.js';
 
 export const pageContext = createContext(); 
@@ -26,7 +25,7 @@ function Home() {
     <div>
       <pageContext.Provider value={{currentPage,handleNavPage,isLogging,setlogging,userName,setUserName}}>
         <Container>
-            <formSearch></formSearch>
+      
             <AppBar></AppBar>
             <Grid sx={{mt:1,p:2}} container spacing={2} >
               {jobs.slice(currentPage*5-5,currentPage*5).map(job=>(

@@ -3,9 +3,9 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
-import { Divider, FormControl, IconButton, InputAdornment, InputLabel, OutlinedInput, TextField } from '@mui/material';
-import { useForm } from 'react-hook-form';
-import { AccountCircle, Visibility, VisibilityOff } from '@mui/icons-material';
+import {FormControl, IconButton, InputAdornment, InputLabel, OutlinedInput, TextField } from '@mui/material';
+
+import { Visibility, VisibilityOff } from '@mui/icons-material';
 import { useState } from 'react';
 import { useContext } from 'react';
 import {pageContext } from '../pages/Home';
@@ -26,7 +26,7 @@ export default function ModalLogin() {
   const [open, setOpen] = React.useState(false);
   const handleOpenLogin = () => setOpen(true);
   const handleCloseLogin = () => setOpen(false);
-  const {isLogging,setlogging,callBackFunction} = useContext(pageContext);
+  const {setlogging} = useContext(pageContext);
   const [username] = useState("usename");
   const [password] = useState("123");
   const [showPassword, setShowPassword] = useState(false);
