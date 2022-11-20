@@ -5,7 +5,6 @@ import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import BasicChips from './Chips';
 import { Divider } from '@mui/material';
-import { useNavigate } from 'react-router';
 import { pageContext } from '../pages/Home';
  
 const style = {
