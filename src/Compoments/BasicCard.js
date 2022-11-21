@@ -25,7 +25,6 @@ export default function BasicCard({titleJob,jobDes,skills,jobId}) {
         {
           <ModalDetailJob jobTitle={titleJob} jobDes={jobDes} skills={skills}/>
         }
-        
       </CardActions>
     </Card>
   );

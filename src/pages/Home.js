@@ -16,21 +16,24 @@ function Home() {
     setcurrentPage(value);
   };
   useEffect( ()=>{
-    fetch('http://localhost:3000/jobs')
+    fetch('http://localhot:3000/jobs')
     .then((res)=> res.json())
     .then((data)=>setJobs(data))
+    .catch((error) => {
+      document.querySelector('#errorMessenge').innerText = error +'   App chạy Json server nên không đưa lên netlify được';
+    });
   },[currentPage]);
 
   return (
     <div>
       <pageContext.Provider value={{currentPage,handleNavPage,isLogging,setlogging,userName,setUserName}}>
         <Container>
-      
+            <p id='errorMessenge'></p>
             <AppBar></AppBar>
             <Grid sx={{mt:1,p:2}} container spacing={2} >
               {jobs.slice(currentPage*5-5,currentPage*5).map(job=>(
-                  <Grid item xs={12} sm={6} md={4}  >
-                      <Card sx={{backgroundColor:'#5d5d5d'}} titleJob={job.title} salaryMax={job.salaryHigh} city={job.city} jobDes={job.description} jobId={job.id} skills={job.skills}/>
+                  <Grid key={job.id} item xs={12} sm={6} md={4}  >
+                      <Card  sx={{backgroundColor:'#5d5d5d'}} titleJob={job.title} salaryMax={job.salaryHigh} city={job.city} jobDes={job.description} jobId={job.id} skills={job.skills}/>
                   </Grid>
               ))}
             </Grid>
