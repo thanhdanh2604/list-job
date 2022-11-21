@@ -16,7 +16,7 @@ function Home() {
     setcurrentPage(value);
   };
   useEffect( ()=>{
-    fetch('http://localhot:3000/jobs')
+    fetch('http://localhost:3000/jobs')
     .then((res)=> res.json())
     .then((data)=>setJobs(data))
     .catch((error) => {
