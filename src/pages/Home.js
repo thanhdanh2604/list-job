@@ -20,7 +20,8 @@ function Home() {
     .then((res)=> res.json())
     .then((data)=>setJobs(data))
     .catch((error) => {
-      document.querySelector('#errorMessenge').innerText = error +'   App chạy Json server nên không đưa lên netlify được';
+      document.querySelector('#errorMessenge').innerText = 'Không có dữ liệu!';
+      console.log(error)
     });
   },[currentPage]);
 
