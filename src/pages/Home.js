@@ -21,7 +21,7 @@ function Home() {
     .then((data)=>setJobs(data))
     .catch((error) => {
       document.querySelector('#errorMessenge').innerText = 'Không có dữ liệu!';
-      console.log(error)
+      console.log(error);
     });
   },[currentPage]);
 
